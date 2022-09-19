@@ -25,7 +25,7 @@ def printCardinalDir():
             print("[NOW HEADING " + (each["directionName"]).upper() + "]")
         if "Welcome" in each["narrative"]:
             print("Welcome to your Destination " + name + "!")
-
+#test
 # main
 print ("Welcome to Group 4's MapQuest!")
 print ("Remember to enter 'q' or 'quit' to exit the program!\n")
