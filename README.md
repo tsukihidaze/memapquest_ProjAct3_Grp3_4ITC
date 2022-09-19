@@ -1,1 +1,6 @@
-"# memapquest_ProjAct3_Grp4_4ITG" 
+"# mapquest_ProjAct3_Grp4_4ITG" 
+"# Group 4 of 4ITG."
+"Gerona, Angelique" 
+"Mendoza, David Miguel" 
+"Paclibar, Hana Gabrielle" 
+"Romasanta, Miro Gleeford" 
