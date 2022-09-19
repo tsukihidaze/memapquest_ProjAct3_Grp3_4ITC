@@ -1,6 +1,9 @@
 import urllib.parse
 import requests
+from colorama import Fore
+from colorama import Style
 from texttable import Texttable
+
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "a7i9vjVY2Qt2Ace15kn8xgHLmfGQEul1"
@@ -16,6 +19,13 @@ def printDir():
         if "Welcome" in each["narrative"]:
             print(f"{Style.BRIGHT}{Fore.GREEN}Finally! {Style.RESET_ALL}" + (each["narrative"]) + "\n")
 
+# main
+print (f"{Style.BRIGHT}Welcome to Group 4's {Fore.CYAN}MapQuest{Style.RESET_ALL}!")
+print (f"Remember to enter 'q' or 'quit' to {Style.BRIGHT}{Fore.RED}exit{Style.RESET_ALL} the program!\n")
+
+name = input("Your name: ")
+if name == "quit" or name == "q":
+        exit
 
 while True:
 
