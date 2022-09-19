@@ -34,6 +34,9 @@ name = input("Your name: ")
 if name == "quit" or name == "q":
         exit
 
+# main
+print (f"{Style.BRIGHT}Welcome to Group 4's {Fore.CYAN}MapQuest{Style.RESET_ALL}!")
+print (f"Remember to enter 'q' or 'quit' to {Style.BRIGHT}{Fore.RED}exit{Style.RESET_ALL} the program!\n")
 while True:
     
     myUnits = input("Type 1 if you prefer Miles\nType 2 if you prefer Kilometers: ")
