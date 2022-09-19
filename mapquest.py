@@ -1,13 +1,44 @@
+from ast import And
 import urllib.parse
 import requests
+from colorama import Fore
+from colorama import Style
+from texttable import Texttable
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "a7i9vjVY2Qt2Ace15kn8xgHLmfGQEul1"
 
+# functions
+t = Texttable()
+def printDir():
+        if "Welcome" not in each["narrative"] and myUnits == "1":
+            print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])) + " miles)") + "\n")
+        if "Welcome" not in each["narrative"] and myUnits == "2":
+            print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) + " km)") + "\n")
 
+        if "Welcome" in each["narrative"]:
+            print(f"{Style.BRIGHT}{Fore.GREEN}Finally! {Style.RESET_ALL}" + (each["narrative"]) + "\n")
+
+        # print(f"This is {Fore.GREEN}color{Style.RESET_ALL}!")
+def printCardinalDir():
+        if "Welcome" not in each["narrative"]:
+            print("[NOW HEADING " + (each["directionName"]).upper() + "]")
+        if "Welcome" in each["narrative"]:
+            print("Welcome to your Destination " + name + "!")
+
+# main
+print ("Welcome to Group 4's MapQuest!")
+print ("Remember to enter 'q' or 'quit' to exit the program!\n")
+
+name = input("Your name: ")
+if name == "quit" or name == "q":
+        exit
 
 while True:
-
+    
+    myUnits = input("Type 1 if you prefer Miles\nType 2 if you prefer Kilometers: ")
+    if myUnits == "quit" or myUnits == "q":
+        break
     orig = input("Starting Location: ")
     if orig == "quit" or orig == "q":
         break
@@ -32,19 +63,28 @@ while True:
 
         print("=============================================")
 
-        print("Directions from " + (orig) + " to " + (dest))
+        print("Directions from " + (orig).upper + " to " + (dest).upper)
 
         print("Trip Duration:   " + (json_data["route"]["formattedTime"]))
 
-        print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
+        if myUnits == "1":
+            print("Miles:      " + str("{:.2f}".format((json_data["route"]["distance"]))))
+        if myUnits == "2":
+            print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
 
         print("Fuel Used (Ltr): " + str("{:.2f}".format((json_data["route"]["fuelUsed"])*3.78)))
 
         print("=============================================")
-
         for each in json_data["route"]["legs"][0]["maneuvers"]:
+            printDir()
+            printCardinalDir()
 
-            print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) + " km)"))
+        # for each in json_data["route"]["legs"][0]["maneuvers"]:
+        #     # if "Merge" in each["narrative"]:
+        #         print("[NOW HEADING " + (each["directionName"]).upper() + "]")
+        #         print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) + " km)") + "\n")
+
+        #     # print(f"This is {Fore.GREEN}color{Style.RESET_ALL}!")
 
         print("=============================================\n")
 
