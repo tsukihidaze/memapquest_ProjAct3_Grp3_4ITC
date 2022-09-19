@@ -22,21 +22,18 @@ def printDir():
         # print(f"This is {Fore.GREEN}color{Style.RESET_ALL}!")
 def printCardinalDir():
         if "Welcome" not in each["narrative"]:
-            print("[NOW HEADING " + (each["directionName"]).upper() + "]")
+            print(f"{Fore.YELLOW}[NOW HEADING " + (each["directionName"]).upper() + f"]{Style.RESET_ALL}")
         if "Welcome" in each["narrative"]:
-            print("Welcome to your Destination " + name + "!")
-#test
+            print(f"{Style.BRIGHT}{Fore.GREEN}Welcome to your Destination {Style.RESET_ALL}{Style.BRIGHT}{Fore.BLUE}" + name + f"!{Style.RESET_ALL}")
+
 # main
-print ("Welcome to Group 4's MapQuest!")
-print ("Remember to enter 'q' or 'quit' to exit the program!\n")
+print (f"{Style.BRIGHT}Welcome to Group 4's {Fore.CYAN}MapQuest{Style.RESET_ALL}!")
+print (f"Remember to enter 'q' or 'quit' to {Style.BRIGHT}{Fore.RED}exit{Style.RESET_ALL} the program!\n")
 
 name = input("Your name: ")
 if name == "quit" or name == "q":
         exit
 
-# main
-print (f"{Style.BRIGHT}Welcome to Group 4's {Fore.CYAN}MapQuest{Style.RESET_ALL}!")
-print (f"Remember to enter 'q' or 'quit' to {Style.BRIGHT}{Fore.RED}exit{Style.RESET_ALL} the program!\n")
 while True:
     
     myUnits = input("Type 1 if you prefer Miles\nType 2 if you prefer Kilometers: ")
