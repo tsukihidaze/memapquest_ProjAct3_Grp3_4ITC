@@ -5,13 +5,15 @@ from colorama import Style
 from texttable import Texttable
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
+map_api = "https://www.mapquestapi.com/staticmap/v5/map?"
+map_api_zoom = "&zoom=16&type=hyb&size=1600,1200@2x"
 key = "a7i9vjVY2Qt2Ace15kn8xgHLmfGQEul1"
 
 # functions
 t = Texttable()
 def printDir():
         if "Welcome" not in each["narrative"] and myUnits == "1":
-            print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])) + " miles)") + "\n")
+            print((each["narrative"]) + "\n")
         if "Welcome" not in each["narrative"] and myUnits == "2" or myUnits.isalpha():
             print((each["narrative"]) + " (" + str("{:.2f}".format((each["distance"])*1.61) + " km)") + "\n")
 
@@ -52,10 +54,13 @@ while True:
         break
 
     url = main_api + urllib.parse.urlencode({"key":key, "from":orig, "to":dest})
+    myMapURL = map_api + urllib.parse.urlencode({"key":key, "center":dest}) + map_api_zoom
 
     json_data = requests.get(url).json()
 
-    print(f"{Style.BRIGHT}\n\nURL to your directions: {Style.RESET_ALL}" + (url))
+    print(f"{Style.BRIGHT}{Fore.YELLOW}\n\nURL to your directions: {Style.RESET_ALL}" + (url))
+    print(f"{Style.BRIGHT}{Fore.YELLOW}\nSattelite image to your destination: {Style.RESET_ALL}" + (myMapURL))
+
 
     json_data = requests.get(url).json()
     
@@ -76,7 +81,7 @@ while True:
             print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
         if myUnits != "1" or "2":
             print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
-        print("Fuel Used (Ltr): " + str("{:.2f}".format((json_data["route"]["fuelUsed"])*3.78)))
+        #print("Fuel Used (Ltr): " + str("{:.2f}".format((json_data["route"]["fuelUsed"])*3.78)))
 
         print(f"{Style.BRIGHT}============================================={Style.RESET_ALL}")
         for each in json_data["route"]["legs"][0]["maneuvers"]:
