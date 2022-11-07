@@ -23,9 +23,9 @@ def printDir():
 
         # print(f"This is {Fore.GREEN}color{Style.RESET_ALL}!")
 def printCardinalDir():
-        if "Welcome" not in each["narrative"]:
+        if "Arrive" not in each["narrative"]:
             print(f"{Fore.YELLOW}[NOW HEADING " + (each["directionName"]).upper() + f"]{Style.RESET_ALL}")
-        if "Welcome" in each["narrative"]:
+        if "Arrive" in each["narrative"]:
             print(f"{Style.BRIGHT}{Fore.GREEN}Welcome to your Destination {Style.RESET_ALL}{Style.BRIGHT}{Fore.BLUE}" + name + f"!{Style.RESET_ALL}")
 
 # main
