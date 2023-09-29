@@ -1,5 +1,5 @@
 # mapquest_ProjAct3_Grp3_4ITC  <br />
-## Group 4 of 4ITG <br />
+## Group3  of 4ITC <br />
 
 Arcilla, Mariane <br />
 Bacuyag, Lance <br />
