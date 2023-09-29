@@ -1,7 +1,8 @@
-# mapquest_ProjAct3_Grp4_4ITG  <br />
+# mapquest_ProjAct3_Grp3_4ITC  <br />
 ## Group 4 of 4ITG <br />
 
-Gerona, Angelique  <br />
-Mendoza, David Miguel  <br />
-Paclibar, Hana Gabrielle  <br />
-Romasanta, Miro Gleeford  <br />
+Arcilla, Mariane <br />
+Bacuyag, Lance <br />
+Consebido, Kyle <br />
+Mendoza, David Miguel <br />
+Pacalso, Edward <br />
