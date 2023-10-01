@@ -31,7 +31,7 @@ def printCardinalDir():
 # main
 # prints "Welcome messages"
 print(f"{Style.BRIGHT}----------------------------------{Style.RESET_ALL}")
-print (f"{Style.BRIGHT}| Welcome to Group 4's {Fore.CYAN}MapQuest!{Style.RESET_ALL}{Style.BRIGHT} |{Style.RESET_ALL}")
+print (f"{Style.BRIGHT}| Welcome to Group 3's {Fore.CYAN}MapQuest!{Style.RESET_ALL}{Style.BRIGHT} |{Style.RESET_ALL}")
 print(f"{Style.BRIGHT}----------------------------------{Style.RESET_ALL}")
 
 print (f"Remember to enter 'q' or 'quit' to {Style.BRIGHT}{Fore.RED}exit{Style.RESET_ALL} the program!\n")
